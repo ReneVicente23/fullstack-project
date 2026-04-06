@@ -71,7 +71,25 @@
     const input = document.querySelector("#taskInput");
     const button = document.querySelector("#addTaskBtn");
     const list = document.querySelector("#taskList");
-    button.addEventListener("click", () =>{});
+    button.addEventListener("click", () =>{
+        //console.log(input);
+        var auxi = input.value;
+        if(auxi!=''){
+            console.log(auxi);
+            var li=document.createElement("li")
+            li.classList.add('list'); 
+            li.textContent = auxi;
+            list.appendChild(li);
+        }
+        input.value='';
+    });
+
+    list.addEventListener("click",aux =>{
+        if (aux.target.tagName === 'LI') {
+            //console.log(aux.target.textContent);
+            list.removeChild(aux.target);
+        }
+    });
 </script>
 </body>
 </html>
